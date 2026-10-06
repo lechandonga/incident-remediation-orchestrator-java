@@ -1,0 +1,28 @@
+package com.github.lechandonga.incidentremediationorchestratorjava.audit;
+
+/**
+ * 审计事件类型。覆盖所有“状态变更”与“拒绝/跳过”决策点，
+ * 保证仅凭审计日志即可回放并重建任一处置的当前状态。
+ */
+public enum AuditEventType {
+    ALERT_RECEIVED,
+    ALERT_SUPPRESSED,
+    ALERT_SKIPPED_MAINTENANCE,
+    ALERT_SKIPPED_TARGET_BUSY,
+    POLICY_REJECTED,
+    IDEMPOTENT_REPLAY,
+    REMEDIATION_CREATED,
+    REMEDIATION_STARTED,
+    STEP_STARTED,
+    STEP_SUCCEEDED,
+    STEP_RETRY_SCHEDULED,
+    STEP_FAILED,
+    STEP_SKIPPED,
+    REMEDIATION_SUCCEEDED,
+    REMEDIATION_FAILED,
+    REMEDIATION_CANCEL_REQUESTED,
+    REMEDIATION_CANCELLED,
+    REMEDIATION_TIMEOUT,
+    ILLEGAL_TRANSITION_IGNORED,
+    MAINTENANCE_WINDOW_CHANGED
+}
